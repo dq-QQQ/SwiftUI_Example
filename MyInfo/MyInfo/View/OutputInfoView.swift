@@ -11,12 +11,14 @@ struct OutputInfoView: View {
     @Binding var navigationState: Bool
     
     var body: some View {
-//        Button(action: {
-//            navigationState = false
-//        }, label: {
-//            Text("ho")
-//        })
-        Text("ho")
+        VStack(alignment: .leading){
+            Button(action: {
+                navigationState = false
+            }, label: {
+                Text("ho")
+                    .font(.largeTitle)
+            })
+        }
     }
 }
 

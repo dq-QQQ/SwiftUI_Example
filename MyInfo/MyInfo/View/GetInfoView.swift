@@ -11,7 +11,7 @@ struct InputInfoView: View {
     @Binding var navigationState: Bool
     
     var body: some View {
-            NavigationLink(destination:OutputInfoView(navigationState: $navigationState)){
+        NavigationLink(destination:OutputInfoView(navigationState: $navigationState).navigationBarBackButtonHidden(true)){
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         }
     }
