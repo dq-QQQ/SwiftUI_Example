@@ -9,16 +9,24 @@
 import SwiftUI
 
 struct Home: View {
-    @ObservedObject var viewModel = ProductViewModel()
+    @EnvironmentObject private var viewModel: ProductViewModel
     
     var body: some View {
         NavigationView {
-            List(viewModel.getProduct()) { product in
-                NavigationLink(destination: ProductDetatilView(product: product)){
-                    ProductRowView(product: product)
+            if #available(iOS 14.0, *) {
+                List(viewModel.getProduct()) { product in
+                    NavigationLink(destination: ProductDetatilView(product: product)){
+                        ProductRowView(product: product)
+                    }
+                }
+                .navigationTitle("dq's Fruit Mart")
+            } else {
+                List(viewModel.getProduct()) { product in
+                    NavigationLink(destination: ProductDetatilView(product: product)){
+                        ProductRowView(product: product)
+                    }
                 }
             }
-            .navigationTitle("dq's Fruit Mart")
         }
         
     }

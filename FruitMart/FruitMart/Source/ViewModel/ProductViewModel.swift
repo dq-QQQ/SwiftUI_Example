@@ -19,6 +19,14 @@ class ProductViewModel: ObservableObject {
         }
     }
     
+    func toggleFavorite(of product: ProductModel.ProductInfo) {
+        model.toggleFavorite(of: product)
+    }
+    
+    func imageNameByFavorite(of product: ProductModel.ProductInfo) -> String {
+        product.isFavorite ? "heart.fill": "heart"
+    }
+    
     func getProduct() -> [ProductModel.ProductInfo] {
         model.getProduct()
     }

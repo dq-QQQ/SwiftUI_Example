@@ -46,7 +46,7 @@ private extension ProductRowView {
                 Text("\(product?.price ?? 0)")
                     .font(.headline)
                 Spacer()
-                Image(systemName: "heart")
+                FavoriteButton(product: product!)
                 Image(systemName: "cart")
             }
         }

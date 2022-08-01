@@ -9,16 +9,22 @@
 import Foundation
 
 struct ProductModel {
-    private var product: [ProductInfo]
-    
+    private var products: [ProductInfo]
     
     init(filename: String) {
-        self.product = Bundle.main.decode(filename: filename, as: [ProductInfo].self)
+        self.products = Bundle.main.decode(filename: filename, as: [ProductInfo].self)
+    }
+    
+    mutating func toggleFavorite(of product: ProductInfo) {
+        guard let index = products.firstIndex(of: product) else {
+            return
+        }
+        products[index].isFavorite.toggle()
     }
     
     func choose(_ i: Int) -> ProductInfo? {
-        if i < product.count {
-            return product[i]
+        if i < products.count {
+            return products[i]
         } else {
             return nil
         }            
@@ -32,15 +38,16 @@ struct ProductModel {
      */
     
     func getProduct() -> [ProductInfo] {
-        product
+        products
     }
     
-    struct ProductInfo: Decodable, Identifiable {
+    struct ProductInfo: Decodable, Identifiable, Equatable {
         var id: String { name }
         let name: String
         let imageName: String
         let price: Int
         let description: String
         var isFavorite: Bool = false
+//        var quantity: Int = 1
     }
 }

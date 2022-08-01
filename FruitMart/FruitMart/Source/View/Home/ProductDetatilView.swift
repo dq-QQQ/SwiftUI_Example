@@ -9,18 +9,38 @@
 import SwiftUI
 
 struct ProductDetatilView: View {
+    @State private var quantity: Int = 1
+    @State private var showingAlert: Bool = false
+    @EnvironmentObject private var orderViewModel: OrderViewModel
     let product: ProductModel.ProductInfo
     
     var body: some View {
+        if #available(iOS 15, *) {
+            wholeView
+            .alert(Text("주문 확인"), isPresented: $showingAlert, actions: {
+                Button("취소") { }
+                Button("확인") { orderViewModel.placeOrder(product: product, quantity: quantity) }
+            }, message: {
+                Text("진짜 구매하시겠습니까")
+            })
+        } else {
+            wholeView
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("주문 확인"), message: Text("\(product.name)을 \(quantity)개만큼 구매하시겠습니까"), primaryButton: .default(Text("확인"), action: {}), secondaryButton: .cancel(Text("취소")))
+                }
+        }
+    }
+}
+
+extension ProductDetatilView {
+    var wholeView: some View {
         VStack {
             productImage
             orderView
         }
         .edgesIgnoringSafeArea(.top)
     }
-}
-
-extension ProductDetatilView {
+    
     var productImage: some View {
         GeometryReader { _ in
             Image(self.product.imageName)
@@ -53,10 +73,7 @@ extension ProductDetatilView {
                     .fontWeight(.medium)
                     .foregroundColor(.black)
                 Spacer()
-                Image(systemName: "heart")
-                    .imageScale(.large)
-                    .foregroundColor(Color.peach)
-                    .frame(width: 32, height: 32)
+                FavoriteButton(product: product)
             }
             Text(splitText(product.description))
                 .foregroundColor(.secondText)
@@ -79,16 +96,20 @@ extension ProductDetatilView {
     }
     
     var priceInfo: some View {
-        HStack {
-            (Text("₩") + Text("\(product.price)").font(.title))
+        let price = quantity * product.price
+        return HStack {
+            (Text("₩") + Text("\(price)").font(.title))
                 .fontWeight(.medium)
             Spacer()
+            QuantitySelector(quantity: $quantity)
         }
         .foregroundColor(.black)
     }
     
     var placeOrderButton: some View {
-        Button(action: { }) {
+        Button(action: {
+            self.showingAlert = true
+        }) {
             Capsule()
                 .fill(Color.peach)
                 .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 55)

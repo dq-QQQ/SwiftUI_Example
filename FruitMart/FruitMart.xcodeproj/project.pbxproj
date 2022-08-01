@@ -20,6 +20,10 @@
 		A1A09D0C28965C8500A983C1 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A09D0B28965C8500A983C1 /* ProductViewModel.swift */; };
 		A1A09D0E28966B6800A983C1 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A09D0D28966B6800A983C1 /* BundleExtension.swift */; };
 		A1A09D102896721900A983C1 /* ProductDetatilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A09D0F2896721900A983C1 /* ProductDetatilView.swift */; };
+		A1AD25632897D5A1004BA99A /* QuantitySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25622897D5A1004BA99A /* QuantitySelector.swift */; };
+		A1AD25652897E628004BA99A /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25642897E628004BA99A /* FavoriteButton.swift */; };
+		A1AD25672897FDF5004BA99A /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25662897FDF5004BA99A /* OrderModel.swift */; };
+		A1AD25692897FE7F004BA99A /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25682897FE7F004BA99A /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		A1A09D0B28965C8500A983C1 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		A1A09D0D28966B6800A983C1 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		A1A09D0F2896721900A983C1 /* ProductDetatilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetatilView.swift; sourceTree = "<group>"; };
+		A1AD25622897D5A1004BA99A /* QuantitySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelector.swift; sourceTree = "<group>"; };
+		A1AD25642897E628004BA99A /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		A1AD25662897FDF5004BA99A /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderModel.swift; path = FruitMart/Source/View/Home/OrderModel.swift; sourceTree = SOURCE_ROOT; };
+		A1AD25682897FE7F004BA99A /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A09D0828965BE500A983C1 /* ProductModel.swift */,
+				A1AD25662897FDF5004BA99A /* OrderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +156,8 @@
 				5238EACF240BAC920079E99D /* HomeView.swift */,
 				A1A09D032896550100A983C1 /* ProductRowView.swift */,
 				A1A09D0F2896721900A983C1 /* ProductDetatilView.swift */,
+				A1AD25622897D5A1004BA99A /* QuantitySelector.swift */,
+				A1AD25642897E628004BA99A /* FavoriteButton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -172,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A09D0B28965C8500A983C1 /* ProductViewModel.swift */,
+				A1AD25682897FE7F004BA99A /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,10 +264,14 @@
 				5238EACC240BAC920079E99D /* FruitMartApp.swift in Sources */,
 				5238EACE240BAC920079E99D /* SceneDelegate.swift in Sources */,
 				5238EAD0240BAC920079E99D /* HomeView.swift in Sources */,
+				A1AD25672897FDF5004BA99A /* OrderModel.swift in Sources */,
 				A1A09D102896721900A983C1 /* ProductDetatilView.swift in Sources */,
 				A1A09D042896550100A983C1 /* ProductRowView.swift in Sources */,
 				A1A09D07289657E400A983C1 /* ColorExtension.swift in Sources */,
+				A1AD25632897D5A1004BA99A /* QuantitySelector.swift in Sources */,
 				A1A09D0928965BE600A983C1 /* ProductModel.swift in Sources */,
+				A1AD25692897FE7F004BA99A /* OrderViewModel.swift in Sources */,
+				A1AD25652897E628004BA99A /* FavoriteButton.swift in Sources */,
 				A1A09D0E28966B6800A983C1 /* BundleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,8 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FruitMart/Preview Content\"";
+				DEVELOPMENT_TEAM = VBHJCPK49S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FruitMart/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,8 +433,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FruitMart/Preview Content\"";
+				DEVELOPMENT_TEAM = VBHJCPK49S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FruitMart/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
