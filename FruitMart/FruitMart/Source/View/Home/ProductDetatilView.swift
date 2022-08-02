@@ -11,15 +11,23 @@ import SwiftUI
 struct ProductDetatilView: View {
     @State private var quantity: Int = 1
     @State private var showingAlert: Bool = false
+    @State private var showingPopup: Bool = false
     @EnvironmentObject private var orderViewModel: OrderViewModel
     let product: ProductModel.ProductInfo
     
     var body: some View {
         if #available(iOS 15, *) {
             wholeView
-            .alert(Text("주문 확인"), isPresented: $showingAlert, actions: {
+                .popup(isPresented: $showingPopup) {
+                    Text("주문 완료")
+                        .font(.system(size: 24))
+                        .bold()
+                        .kerning(2)
+                }
+                .edgesIgnoringSafeArea(.top)
+                .alert(Text("주문 확인"), isPresented: $showingAlert, actions: {
                 Button("취소") { }
-                Button("확인") { orderViewModel.placeOrder(product: product, quantity: quantity) }
+                    Button("확인") { orderViewModel.placeOrder(product: product, quantity: quantity); showingPopup = true}
             }, message: {
                 Text("진짜 구매하시겠습니까")
             })
@@ -38,11 +46,10 @@ extension ProductDetatilView {
             productImage
             orderView
         }
-        .edgesIgnoringSafeArea(.top)
     }
     
     var productImage: some View {
-        GeometryReader { _ in
+        GeometryReader {_ in
             Image(self.product.imageName)
                 .resizable()
                 .scaledToFill()
@@ -118,11 +125,13 @@ extension ProductDetatilView {
                     .foregroundColor(.white))
                 .padding(.bottom, 40)
         }
+        .buttonStyle(ShrinkButtonStyle())
     }
 }
 
 struct ProductDetatilView_Previews: PreviewProvider {
     static var previews: some View {
         ProductDetatilView(product: ProductModel(filename: "ProductData.json").choose(0)!)
+            .environmentObject(ProductViewModel())
     }
 }

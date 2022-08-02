@@ -24,6 +24,8 @@
 		A1AD25652897E628004BA99A /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25642897E628004BA99A /* FavoriteButton.swift */; };
 		A1AD25672897FDF5004BA99A /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25662897FDF5004BA99A /* OrderModel.swift */; };
 		A1AD25692897FE7F004BA99A /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25682897FE7F004BA99A /* OrderViewModel.swift */; };
+		A1AD256E2898F770004BA99A /* ShrinkButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD256D2898F770004BA99A /* ShrinkButtonStyle.swift */; };
+		A1AD25712899655C004BA99A /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD25702899655C004BA99A /* Popup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		A1AD25642897E628004BA99A /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		A1AD25662897FDF5004BA99A /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderModel.swift; path = FruitMart/Source/View/Home/OrderModel.swift; sourceTree = SOURCE_ROOT; };
 		A1AD25682897FE7F004BA99A /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		A1AD256D2898F770004BA99A /* ShrinkButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkButtonStyle.swift; sourceTree = "<group>"; };
+		A1AD25702899655C004BA99A /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,8 @@
 		5238EAEC240BF9FE0079E99D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A1AD256F2899653C004BA99A /* ViewModifier */,
+				A1AD256A2898F5C8004BA99A /* CustomView */,
 				A1A09D05289657C700A983C1 /* Extension */,
 			);
 			path = Helper;
@@ -186,6 +192,22 @@
 				A1AD25682897FE7F004BA99A /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A1AD256A2898F5C8004BA99A /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				A1AD256D2898F770004BA99A /* ShrinkButtonStyle.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		A1AD256F2899653C004BA99A /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				A1AD25702899655C004BA99A /* Popup.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +284,7 @@
 			files = (
 				A1A09D0C28965C8500A983C1 /* ProductViewModel.swift in Sources */,
 				5238EACC240BAC920079E99D /* FruitMartApp.swift in Sources */,
+				A1AD256E2898F770004BA99A /* ShrinkButtonStyle.swift in Sources */,
 				5238EACE240BAC920079E99D /* SceneDelegate.swift in Sources */,
 				5238EAD0240BAC920079E99D /* HomeView.swift in Sources */,
 				A1AD25672897FDF5004BA99A /* OrderModel.swift in Sources */,
@@ -271,6 +294,7 @@
 				A1AD25632897D5A1004BA99A /* QuantitySelector.swift in Sources */,
 				A1A09D0928965BE600A983C1 /* ProductModel.swift in Sources */,
 				A1AD25692897FE7F004BA99A /* OrderViewModel.swift in Sources */,
+				A1AD25712899655C004BA99A /* Popup.swift in Sources */,
 				A1AD25652897E628004BA99A /* FavoriteButton.swift in Sources */,
 				A1A09D0E28966B6800A983C1 /* BundleExtension.swift in Sources */,
 			);
@@ -412,7 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FruitMart/Preview Content\"";
-				DEVELOPMENT_TEAM = VBHJCPK49S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/FruitMart/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -420,7 +444,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.giftbot.example.FruitMart;
+				PRODUCT_BUNDLE_IDENTIFIER = kyujin.FruitMart;
 				PRODUCT_NAME = FruitMart;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -441,7 +465,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.giftbot.example.FruitMart;
+				PRODUCT_BUNDLE_IDENTIFIER = kyujin.FruitMart;
 				PRODUCT_NAME = FruitMart;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

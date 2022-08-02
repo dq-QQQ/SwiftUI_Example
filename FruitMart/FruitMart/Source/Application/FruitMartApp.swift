@@ -14,10 +14,21 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 @main
-struct CS193PApp: App {
+struct FruitMartApp: App {
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor(named: "peach")!]
+        
+        UINavigationBar.appearance().titleTextAttributes = [
+            .foregroundColor: UIColor(named: "peach")!]
+    }
+    
     var body: some Scene {
         WindowGroup {
             Home()
+                .accentColor(.primary)
+//                .tint(.black)
                 .environmentObject(ProductViewModel())
                 .environmentObject(OrderViewModel())
         }
