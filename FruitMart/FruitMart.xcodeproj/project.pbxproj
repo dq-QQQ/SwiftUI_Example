@@ -31,6 +31,9 @@
 		A1AD257A289A85DB004BA99A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD2579289A85DB004BA99A /* RecipeView.swift */; };
 		A1AD257D289BB7D2004BA99A /* FruitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD257C289BB7D2004BA99A /* FruitCardView.swift */; };
 		A1AD2580289BB8CE004BA99A /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD257F289BB8CE004BA99A /* ImageGalleryView.swift */; };
+		A1AD2583289C0EB7004BA99A /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD2582289C0EB7004BA99A /* MyPageView.swift */; };
+		A1AD2585289C10C1004BA99A /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD2584289C10C1004BA99A /* OrderListView.swift */; };
+		A1AD2587289C11FD004BA99A /* OrderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD2586289C11FD004BA99A /* OrderRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		A1AD2579289A85DB004BA99A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		A1AD257C289BB7D2004BA99A /* FruitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCardView.swift; sourceTree = "<group>"; };
 		A1AD257F289BB8CE004BA99A /* ImageGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView.swift; sourceTree = "<group>"; };
+		A1AD2582289C0EB7004BA99A /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		A1AD2584289C10C1004BA99A /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		A1AD2586289C11FD004BA99A /* OrderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				A1AD2574289A7265004BA99A /* MainView.swift */,
+				A1AD2581289C0E0B004BA99A /* MyPage */,
 				A1AD257B289BB79A004BA99A /* ImageGallery */,
 				A1AD2578289A85C4004BA99A /* Recipe */,
 				5238EAE5240BAE840079E99D /* Home */,
@@ -241,6 +248,16 @@
 			path = ImageGallery;
 			sourceTree = "<group>";
 		};
+		A1AD2581289C0E0B004BA99A /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				A1AD2582289C0EB7004BA99A /* MyPageView.swift */,
+				A1AD2584289C10C1004BA99A /* OrderListView.swift */,
+				A1AD2586289C11FD004BA99A /* OrderRowView.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,7 +343,10 @@
 				A1A09D07289657E400A983C1 /* ColorExtension.swift in Sources */,
 				A1AD25632897D5A1004BA99A /* QuantitySelector.swift in Sources */,
 				A1AD2575289A7265004BA99A /* MainView.swift in Sources */,
+				A1AD2585289C10C1004BA99A /* OrderListView.swift in Sources */,
 				A1A09D0928965BE600A983C1 /* ProductModel.swift in Sources */,
+				A1AD2587289C11FD004BA99A /* OrderRowView.swift in Sources */,
+				A1AD2583289C0EB7004BA99A /* MyPageView.swift in Sources */,
 				A1AD257D289BB7D2004BA99A /* FruitCardView.swift in Sources */,
 				A1AD2580289BB8CE004BA99A /* ImageGalleryView.swift in Sources */,
 				A1AD25692897FE7F004BA99A /* OrderViewModel.swift in Sources */,

@@ -59,9 +59,10 @@ private extension MainView {
             .tabItem(image: "photo.on.rectangle", text: "갤러리")
     }
     var myPage: some View {
-        Text("ho")
+        MyPageView()
             .tag(Tabs.myPage)
             .tabItem(image: "person", text: "마이페이지")
+            .onAppear { UITableView.appearance().separatorStyle = .none}
     }
     
 }

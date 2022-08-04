@@ -17,5 +17,12 @@ final class OrderViewModel: ObservableObject {
         model.append(order)
         print("ho")
     }
+    
+    func deleteOrder (at indexes: IndexSet) {
+        guard let index = indexes.first else {
+            return
+        }
+        model.remove(at: index)
+    }
 }
 
