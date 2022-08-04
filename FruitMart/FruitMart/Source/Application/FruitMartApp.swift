@@ -22,12 +22,15 @@ struct FruitMartApp: App {
         
         UINavigationBar.appearance().titleTextAttributes = [
             .foregroundColor: UIColor(named: "peach")!]
+        
+//        UITabBar.appearance().backgroundColor = .blue
+//        UITabBar.appearance().unselectedItemTintColor = .white
     }
     
     var body: some Scene {
         WindowGroup {
-            Home()
-                .accentColor(.primary)
+            MainView()
+//                .accentColor(.primary)
 //                .tint(.black)
                 .environmentObject(ProductViewModel())
                 .environmentObject(OrderViewModel())

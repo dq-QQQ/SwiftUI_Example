@@ -11,6 +11,7 @@ import SwiftUI
 struct ProductRowView: View {
     let product: ProductModel.ProductInfo?
     @EnvironmentObject var orderViewModel: OrderViewModel
+    @State private var willAppear: Bool = false
 //    @Binding var quickOrder: ProductModel?
     
     var body: some View {
@@ -22,6 +23,12 @@ struct ProductRowView: View {
         .background(Color.primary.colorInvert())
         .cornerRadius(6)
         .shadow(color:Color.primaryShadow, radius: 6)
+        .opacity(willAppear ? 1 : 0)
+        .onAppear() {
+            withAnimation {
+                self.willAppear = true
+            }
+        }
     }
 }
 
