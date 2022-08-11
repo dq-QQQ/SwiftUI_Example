@@ -9,9 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     @State var navigationState = false
+    @ObservedObject var ho: InfoViewModel = InfoViewModel()
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 Text("My Info")
                     .kerning(12)
@@ -21,7 +22,13 @@ struct HomeView: View {
                     .background(.yellow)
                     .cornerRadius(30)
                 Spacer()
-                NavigationLink(destination: InputInfoView(navigationState: $navigationState), isActive: $navigationState ) {
+//                NavigationLink(destination:
+                                if ho.currentPage == "InputInfoView" {
+                    InputInfoView(navigationState: $navigationState, ho: ho)
+                                }
+                else if ho.currentPage == "OutputInfoView" {
+                    OutputInfoView(navigationState: $navigationState, ho: ho)
+                                }
                     Image("kyujin")
                         .resizable()
                         .scaledToFit()
@@ -29,10 +36,13 @@ struct HomeView: View {
                         .overlay(Capsule().stroke(.indigo,lineWidth: 10))
                         .shadow(color: .yellow ,radius: 20)
                         .padding()
+                        .onTapGesture {
+                            ho.current = "InputInfoView"
+                        }
                 }
-            }
+//            }
         }
-    }
+//    }
 }
 
 struct HomeView_Previews: PreviewProvider {

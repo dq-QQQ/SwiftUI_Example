@@ -8,10 +8,27 @@
 import Foundation
 
 struct InfoModel {
-    var name: String = ""
-    var birth = Date()
-    var age: Int
-    var choice: Int = 0
-    var gender = ["male", "female"]
-    var feeling: String
+    private var info: (name: String,
+                       birth: Date,
+                       age: Int,
+                       gender: String,
+                       dream: String) = ("", Date(), 0, "", "")
+    
+    mutating func setInfo(_ name: String,
+                          _ birth: Date,
+                          _ age: Int,
+                          _ gender: String,
+                          _ dream: String) {
+        info.0 = name
+        info.1 = birth
+        info.2 = age
+        info.3 = gender
+        info.4 = dream
+    }
+    
+    func getInfo() -> (name: String,
+                       birth: Date,
+                       age: Int,
+                       gender: String,
+                       dream: String) { info }
 }
