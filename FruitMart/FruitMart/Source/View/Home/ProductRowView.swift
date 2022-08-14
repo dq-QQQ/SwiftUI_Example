@@ -34,7 +34,7 @@ struct ProductRowView: View {
 
 private extension ProductRowView {
     var productImage: some View {
-        Image(product?.imageName ?? "")
+        Image("")
             .resizable()
             .scaledToFill()
             .frame(width: 100)
@@ -43,25 +43,25 @@ private extension ProductRowView {
     
     var productCheck: some View {
         VStack(alignment:.leading) {
-            Text(product?.name ?? "nil")
+            Text("")
                 .font(.headline)
                 .fontWeight(.medium)
                 .padding(.bottom, 6)
-            Text(product?.description ?? "nil")
+            Text("")
                 .font(.footnote)
-            Spacer()
-            HStack {
-                Text("₩").font(.footnote) +
-                Text("\(product?.price ?? 0)")
-                    .font(.headline)
-                Spacer()
-                FavoriteButton(product: product!)
-                Button(action : {}) {
-                    Image(systemName: "cart")
-                        .onTapGesture { orderViewModel.placeOrder(product: product!, quantity: 1) }
-                }
-                .buttonStyle(ShrinkButtonStyle())
-            }
+//            Spacer()
+//            HStack {
+//                Text("₩").font(.footnote) +
+//                Text("\(product?.price ?? 0)")
+//                    .font(.headline)
+//                Spacer()
+//                FavoriteButton(product: product!)
+//                Button(action : {}) {
+//                    Image(systemName: "cart")
+//                        .onTapGesture { orderViewModel.placeOrder(product: product!, quantity: 1) }
+//                }
+//                .buttonStyle(ShrinkButtonStyle())
+//            }
         }
         .padding()
     }
