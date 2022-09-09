@@ -36,8 +36,9 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
-struct NotesRepository {
+class NotesRepository:ObservableObject {
     private let dbCollection = Firestore.firestore().collection("notes")
+    
     
     func newNote(title: String, date: Date, body: String) async -> [Note] {
         let note = Note(id: UUID().uuidString, title: title, date: date, body: body)

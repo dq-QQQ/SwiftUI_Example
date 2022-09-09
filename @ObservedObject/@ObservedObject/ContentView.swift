@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Latitude: \(viewModel.model.getLatitude())")
+                Text("jdaskldsjkfsjdakl: \(viewModel.model.getLatitude())")
                 Text("Longitude: \(viewModel.model.getLongitude())")
             }
         }
