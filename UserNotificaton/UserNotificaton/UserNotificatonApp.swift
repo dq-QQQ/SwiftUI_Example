@@ -1,15 +1,14 @@
 //
-//  hoApp.swift
-//  ho
+//  UserNotificatonApp.swift
+//  UserNotificaton
 //
-//  Created by Kyu jin Lee on 2022/09/09.
+//  Created by Kyu jin Lee on 2022/09/17.
 //
 
 import SwiftUI
 
 @main
-struct CDSwiftUIApp: App {
-    
+struct UserNotificatonApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

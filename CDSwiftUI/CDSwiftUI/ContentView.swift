@@ -21,16 +21,11 @@ struct ContactView: View {
 
 struct ContentView: View {
     @FetchRequest(
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Contact.lastName, ascending: true),
-            NSSortDescriptor(keyPath: \Contact.firstName, ascending: true),
-        ]
-    )
-    
-    var contacts: FetchedResults<Contact>
+        sortDescriptors: []
+    ) var contacts: FetchedResults<Contact>
     @State private var isAddContactPresented = false
-    @EnvironmentObject var coreDataStack: CoreDataStack
-    @Environment(\.managedObjectContext) var managedObjectContext
+    private let coreDataStack = CoreDataStack(modelName: "ContactsModel")
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         NavigationView {
