@@ -18,7 +18,6 @@ struct ContentView: View {
                     } else if let error = error {
                         print(error.localizedDescription)
                     }
-                    
                 }
             }
             
@@ -37,8 +36,8 @@ struct ContentView: View {
                 dateComponents.day = ret[2]
                 dateComponents.hour = ret[3]
                 dateComponents.minute = ret[4]
-                let date = Calendar(identifier: .gregorian).date(from: dateComponents)
                 
+                let date = Calendar(identifier: .gregorian).date(from: dateComponents)
                 let dateFormatter = DateFormatter()
                 dateFormatter.locale = Locale(identifier: "ko_KR")
                 dateFormatter.dateFormat = "YYYY년 MM월dd일 HH시mm분"
