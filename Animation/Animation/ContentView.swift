@@ -42,7 +42,7 @@ public struct ContentView: View {
                                 .scaleEffect(tapped == false ? CGFloat(0) : CGFloat(3))
                                 .shadow(color: Color.black.opacity(0.5), radius: 6, x: 0, y: 0)
                                 .font(.title)
-                                .animation(.easeInOut(duration: 3), value: tapped)
+                                .animation(.easeInOut(duration: 2), value: tapped)
 
                         }
                 }
@@ -50,7 +50,7 @@ public struct ContentView: View {
         }
         .contentShape(Rectangle())
         .onAppear {
-            withAnimation(.easeInOut(duration: 3.0)) {
+            withAnimation(.easeInOut(duration: 2.0)) {
                 angle = Angle(degrees: CGFloat(Int.random(in: 0...360)))
             }
             tapped = true
